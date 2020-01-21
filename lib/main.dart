@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import "./Services/ApiService.dart";
+import "./Screens/dropdown.dart";
+import './Screens/AlertDetails.dart';
 
 void main()
 {
@@ -12,35 +14,8 @@ class ApiUI extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      title: "API Calls",
-      home: Material(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-
-          child: ListView(
-            children: <Widget>[
-              RaisedButton(
-                onPressed: (){
-                  var retString = ApiServices().getCall();
-                },
-                child: Text(
-                    "Get Call",
-                    textDirection: TextDirection.ltr
-                ),
-              ),
-              RaisedButton(
-                onPressed: (){
-                  ApiServices().postCall();
-                },
-                child: Text(
-                    "Post Call",
-                    textDirection: TextDirection.ltr
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      title: "Dropdowns",
+      home: AlertDetails()
     );
   }
 }
